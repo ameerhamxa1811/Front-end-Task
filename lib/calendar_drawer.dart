@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Calendar_screen.dart';
-import 'chat_screen.dart';
+import 'chat_list.dart';
 
 class CalendarDrawer extends StatefulWidget {
   @override
@@ -55,13 +55,13 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
                   SizedBox(width: 10),
                   Text(
                     'alpha',
-                      style: TextStyle(
-                        fontFamily: 'Comfortaa',
-                        fontSize: 26,
-                        fontWeight: FontWeight.w700,
-                        height: 1.36,
-                        color: Color(0xFF28263B),
-                      ),
+                    style: TextStyle(
+                      fontFamily: 'Comfortaa',
+                      fontSize: 26,
+                      fontWeight: FontWeight.w700,
+                      height: 1.36,
+                      color: Color(0xFF28263B),
+                    ),
                   ),
                 ],
               ),
@@ -75,11 +75,13 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
               children: [
                 _buildMenuItem(Icons.dashboard_customize, "Overview", onTap: () {  }),
                 _buildMenuItem(Icons.shopping_cart, "E-Commerce", onTap: () {  }),
-                _buildMenuItem(Icons.calendar_today, selected: true, "Calendar", onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CalendarScreen()))),
+                _buildMenuItem(Icons.calendar_today, selected: true, "Calendar",
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CalendarScreen()))),
                 _buildMenuItem(Icons.email, "Mail", onTap: () {  }),
-                _buildMenuItem(Icons.chat, "Chat", onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChatScreen()))),
+                _buildMenuItem(Icons.chat, "Chat",
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ChatList()))),
                 _buildMenuItem(Icons.check_circle, "Tasks", onTap: () {  }),
                 _buildMenuItem(Icons.folder, "Projects", onTap: () {  }),
                 _buildMenuItem(Icons.file_copy, "File Manager", onTap: () {  }),
@@ -136,7 +138,7 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         children: [
-         CircleAvatar(backgroundColor: color, radius: 7,),
+          CircleAvatar(backgroundColor: color, radius: 7,),
           SizedBox(width: 10),
           Text(label, style: TextStyle(color: Colors.black)),
         ],
@@ -144,3 +146,4 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
     );
   }
 }
+
